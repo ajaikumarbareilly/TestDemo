@@ -1,0 +1,67 @@
+create table feedback
+(
+    fid integer not null generated always as identity (start with 100,increment by 1) primary key,
+    uname varchar(200) not null,
+    email varchar(200) not null,
+    mobile varchar(200) not null,
+    subject varchar(200) not null,
+    message varchar(500) not null,
+    fdate date not null
+ )
+
+create table newcat
+(
+    cid integer not null generated always as identity (start with 100,increment by 1) primary key,
+    cname varchar(100) not null
+ )
+
+create table products
+(
+    pid integer not null generated always as identity (start with 100,increment by 1) primary key,
+    rname varchar(200) not null,
+    pcat varchar(200) not null,
+    pname varchar(200) not null,
+    pdescription varchar(200) not null,
+    price varchar(50) not null,
+    pimgpath varchar(300) not null
+ )
+
+create table neworder
+(
+    oid integer not null generated always as identity (start with 1000,increment by 1) primary key,
+    uid varchar(200) not null, 
+    uname varchar(200) not null,
+    rname varchar(200) not null,
+    odate date not null,
+    totalamount varchar(100),
+    gstamount varchar(100),
+    finalamount varchar(100),
+    cardholdername varchar(100),
+    status varchar(200) not null
+ )
+
+
+create table "APP".ADMINUSERS
+(
+	ADMINID VARCHAR(30) not null primary key,
+	RESTAURANTNAME VARCHAR(100),
+	PASSWORD VARCHAR(60),
+	SRQUESTION VARCHAR(300),
+	SRANSWER VARCHAR(100),
+	EMAIL VARCHAR(100),
+	MOBILENO VARCHAR(20),
+	LOCATION VARCHAR(200)
+)
+
+create table "APP".MEMBERS
+(
+	MID VARCHAR(30) not null primary key,
+	MNAME VARCHAR(60),
+	PASSWORD VARCHAR(60),
+	SRQUESTION VARCHAR(200),
+	SRANSWER VARCHAR(200),
+	EMAIL VARCHAR(30),
+	MOBILENO VARCHAR(15),
+	ADDRESS VARCHAR(300),
+	CITY VARCHAR(100)
+)
